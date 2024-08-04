@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AFSTest.Data;
 using AFSTest.Models;
 using AFSTest.Repositories.Interfaces;
