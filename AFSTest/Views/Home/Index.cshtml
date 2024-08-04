@@ -1,0 +1,52 @@
+﻿@model TranslationRequest
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Translate to L33t Sp34k</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2>Translate to L33t Sp34k</h2>
+
+    <form id="translationForm">
+        <textarea id="originalText" name="OriginalText" placeholder="Enter text to translate"></textarea>
+        <br />
+        <button type="submit" class="button">Translate</button>
+    </form>
+
+    <h3>Translation Result:</h3>
+    <div class="spinner" id="spinner"></div>
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function () {
+            $('#translationForm').submit(function (e) {
+                e.preventDefault();
+                $('#spinner').show();
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("TranslateToLeetSpeak", "Home")',
+                    data: { OriginalText: $('#originalText').val() },
+                    success: function (response) {
+                        $('#result').text(response.contents.translated);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Error status: " + xhr.status);
+                        console.log("Error response: " + xhr.responseText);
+                        if (xhr.responseText.includes("429 (Too Many Requests)")) {
+                            $('#result').text('You exceeded the amount of free tries. Please try again in an hour.');
+                        } else {
+                            $('#result').text('Error occurred during translation.');
+                        }
+                    },
+                    complete: function () {
+                        $('#spinner').hide();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AFSTest", "AFSTest.csproj", "{8E48DD6E-1B46-4021-82AD-0C45D074144A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E48DD6E-1B46-4021-82AD-0C45D074144A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E48DD6E-1B46-4021-82AD-0C45D074144A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E48DD6E-1B46-4021-82AD-0C45D074144A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E48DD6E-1B46-4021-82AD-0C45D074144A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E53167D5-1978-476B-A69D-B976128B6FF3}
+	EndGlobalSection
+EndGlobal
