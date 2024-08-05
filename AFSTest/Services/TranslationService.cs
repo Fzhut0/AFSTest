@@ -23,7 +23,7 @@ namespace AFSTest.Services
             var content = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<TranslationResponse>(content);
 
-            _translationRepository.SaveTranslation(new TranslationRecord
+            await _translationRepository.SaveTranslationAsync(new TranslationRecord
             {
                 OriginalText = text,
                 TranslatedText = result.Contents.TranslatedText,

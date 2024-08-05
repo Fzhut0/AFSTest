@@ -4,6 +4,6 @@ namespace AFSTest.Repositories.Interfaces
 {
     public interface ITranslationRepository
     {
-        void SaveTranslation(TranslationRecord record);
+        Task SaveTranslationAsync(TranslationRecord record);
     }
 }

@@ -50,7 +50,7 @@ namespace AFSTest.Tests.TranslationTests
             Assert.NotNull(result);
             Assert.Equal(expectedTranslatedText, result.Contents.TranslatedText);
 
-            _translationRepositoryMock.Verify(repo => repo.SaveTranslation(It.Is<TranslationRecord>(record =>
+            _translationRepositoryMock.Verify(repo => repo.SaveTranslationAsync(It.Is<TranslationRecord>(record =>
                 record.OriginalText == originalText &&
                 record.TranslatedText == expectedTranslatedText &&
                 record.Timestamp != default

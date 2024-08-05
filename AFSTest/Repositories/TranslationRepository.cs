@@ -13,10 +13,10 @@ namespace AFSTest.Repositories
             _context = context;
         }
 
-        public void SaveTranslation(TranslationRecord record)
+        public async Task SaveTranslationAsync(TranslationRecord record)
         {
-            _context.TranslationRecords.Add(record);
-            _context.SaveChanges();
+            await _context.TranslationRecords.AddAsync(record);
+            await _context.SaveChangesAsync();
         }
     }
 }
